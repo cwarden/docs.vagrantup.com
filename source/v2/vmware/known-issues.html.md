@@ -24,3 +24,14 @@ However, if you use automatically generated IP addresses that use many
 subnets, you may find that there are many extra vmnet devices. Manually
 remove these for now. A future release of the provider will address this
 limitation in some way.
+
+## Forwarded Ports Failing in Workstation on Windows
+
+VMware Workstation has a bug on Windows where forwarded ports don't work
+properly. Vagrant actualy works around this bug and makes them work. However,
+if you run the virtual network editor on Windows, the forwarded ports will
+suddenly stop working.
+
+In this case, run `vagrant reload` and things will begin working again.
+
+This issue has been reported to VMware, but a fix hasn't been released yet.
