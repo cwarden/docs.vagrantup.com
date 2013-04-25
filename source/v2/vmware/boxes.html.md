@@ -1,11 +1,11 @@
 ---
-sidebar_current: "vmwarefusion-boxes"
+sidebar_current: "vmware-boxes"
 ---
 
 # Boxes
 
-As with [every provider](/v2/providers/boxes.html), the VMware Fusion
-provider has a custom box format.
+As with [every provider](/v2/providers/boxes.html), the VMware
+providers have a custom box format.
 
 This page documents the format so that you can create your own base boxes.
 Note that currently you must make these base boxes by hand. A future release
@@ -27,8 +27,8 @@ Prior to reading this page, please understand the
 
 ## Contents
 
-A Fusion base box is a compressed archive of the necessary contents
-of a Fusion "vmwarevm" file. Here is an example of what is contained
+A VMware base box is a compressed archive of the necessary contents
+of a VMware "vmwarevm" file. Here is an example of what is contained
 in such a box:
 
 ```
@@ -54,21 +54,21 @@ There is also the "metadata.json" file used by Vagrant itself. This file
 contains nothing but the defaults which are documented on the
 [box format](/v2/boxes/format.html) page.
 
-When bringing up a Fusion backed machine, Vagrant copies all of the contents
+When bringing up a VMware backed machine, Vagrant copies all of the contents
 in the box into a privately managed "vmwarevm" folder, and uses the first
 "vmx" file found to control the machine.
 
 <div class="alert alert-info">
 	<h3>Linked Clones</h3>
 	<p>
-		A future version of the VMware Fusion provider will implement
+		A future version of the VMware provider will implement
 		linked cloning.
 	</p>
 </div>
 
 ## Installed Software
 
-Base boxes for Fusion should have the following software installed, as
+Base boxes for VMware should have the following software installed, as
 a bare minimum:
 
 * SSH server with key-based authentication setup. If you want the box to
@@ -84,7 +84,7 @@ a bare minimum:
 
 Prior to packaging up a box, you should shrink the hard drives as much as
 possible. This can be done with `vmware-vdiskmanager` which is usually
-found in `/Applications/VMware Fusion.app/Contents/Library`. You first
+found in `/Applications/VMware Fusion.app/Contents/Library` for VMware Fusion. You first
 want to defragment then shrink the drive. Usage shown below:
 
 ```

@@ -1,12 +1,12 @@
 ---
-sidebar_current: "vmwarefusion-configuration"
+sidebar_current: "vmware-configuration"
 ---
 
 # Configuration
 
-While VMware Fusion is a drop-in replacement for VirtualBox, there are
+While VMware providers are a drop-in replacement for VirtualBox, there are
 some additional features that are exposed that allow you to more finely
-configure Fusion-specific aspects of your machines.
+configure VMware-specific aspects of your machines.
 
 ## "VMware Fusion.app" Location
 
@@ -26,10 +26,10 @@ $ vagrant up --provider=vmware_fusion
 
 ## Virtual Machine GUI
 
-The VMware Fusion provider generally starts the virtual machines
+The VMware provider generally starts the virtual machines
 in headless mode. If you'd like to see the UI because you're running
 a desktop within the VM, or if you need to debug potential boot issues
-with the VM, you can configure the Fusion provider to boot with the
+with the VM, you can configure the VMware provider to boot with the
 GUI:
 
 ```ruby
@@ -37,6 +37,8 @@ config.vm.provider "vmware_fusion" do |v|
   v.gui = true
 end
 ```
+
+Use "vmware_workstation" if you're using VMware workstation.
 
 ## VMX Customization
 
@@ -49,6 +51,8 @@ config.vm.provider "vmware_fusion" do |v|
   v.vmx["another-key"] = nil
 end
 ```
+
+Use "vmware_workstation" if you're using VMware workstation.
 
 In the example above, the "custom-key" key will be set to "value" and the
 "another-key" key will be removed from the VMX file.
