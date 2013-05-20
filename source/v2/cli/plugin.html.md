@@ -29,7 +29,7 @@ repositories, usually [RubyGems](http://rubygems.org).
 **Command: `vagrant plugin license <name> <license-file>`**
 
 This command installs a license for a proprietary Vagrant plugin,
-such as the [VMware Fusion provider](/v2/vmware-fusion/index.html).
+such as the [VMware Fusion provider](/v2/vmware/index.html).
 
 # Plugin List
 
