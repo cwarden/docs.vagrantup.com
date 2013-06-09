@@ -4,7 +4,7 @@ sidebar_current: "provisioning-chefsolo"
 
 # Chef Solo Provisioner
 
-**Provisioner name: `:chef_solo`**
+**Provisioner name: `chef_solo`**
 
 The chef solo provisioner allows you to provision the guest using
 [Chef](http://www.opscode.com/chef/), specifically with
@@ -33,7 +33,7 @@ specify a [run list](http://docs.opscode.com/essentials_cookbook_recipes_run_lis
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "apache"
   end
 end
@@ -60,7 +60,7 @@ path can also be set via the `cookbooks_path` configuration directive:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "my_cookbooks"
   end
 end
@@ -73,7 +73,7 @@ The configuration value can also be an array of paths:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
   end
 end
@@ -87,7 +87,7 @@ and by adding roles to your run list:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_solo" do |chef|
     chef.roles_path = "roles"
     chef.add_role("web")
   end
@@ -105,7 +105,7 @@ a path to your data bags directory:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_solo" do |chef|
     chef.data_bags_path = "data_bags"
   end
 end
@@ -120,7 +120,7 @@ in to Chef:
 
 ```
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_solo" do |chef|
     # ...
 
     chef.json = {
@@ -134,3 +134,17 @@ end
 
 Hashes, arrays, etc. can be used with the JSON configuration object. Basically,
 anything that can be turned cleanly into JSON works.
+
+## Custom Node Name
+
+You can specify a custom node name by setting the `node_name` property. This
+is useful for cookbooks that may depend on this being set to some sort
+of value. Example:
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.provision "chef_solo" do |chef|
+    chef.node_name = "foo"
+  end
+end
+```

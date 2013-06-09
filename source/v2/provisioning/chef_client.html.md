@@ -84,6 +84,7 @@ need to be modified but are available if your Chef server requires customization
 of these variables:
 
 * `client_key_path`
+* `node_name`
 * `validation_client_name`
 
 ## Cleanup
