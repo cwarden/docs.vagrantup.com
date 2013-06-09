@@ -20,7 +20,10 @@ $ vagrant ssh
 ```
 
 This command will drop you into a full-fledged SSH session. Go ahead and
-interact with the machine, `rm -rf /` (in the SSH prompt!), do whatever you want.
+interact with the machine and do whatever you want. Although it may be tempting,
+be careful about `rm -rf /`, since Vagrant shares a directory at `/vagrant`
+with the directory on the host containing your Vagrantfile, and this can
+delete all those files. Shared folders will be covered in the next section.
 
 Take a moment to think what just happened: With just one line of configuration
 and one command in your terminal, we brought up a fully functional, SSH accessible
