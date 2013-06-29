@@ -9,7 +9,7 @@ sidebar_current: "networking-public"
 Public networks are less private than private networks, and the exact
 meaning actually varies from [provider to provider](/v2/providers/index.html),
 hence the ambiguous definition. The idea is that while
-[private networks](/v2/networks/private_network.html) should never allow the
+[private networks](/v2/networking/private_network.html) should never allow the
 general public access to your machine, public networks can.
 
 <div class="alert alert-info">
