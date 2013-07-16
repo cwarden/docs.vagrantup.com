@@ -4,7 +4,7 @@ sidebar_current: "provisioning-puppetagent"
 
 # Puppet Agent Provisioner
 
-**Provisioner name: `:puppet_server`**
+**Provisioner name: `puppet_server`**
 
 The Puppet agent provisioner allows you to provision the guest using
 [Puppet](http://www.puppetlabs.com/puppet), specifically by
@@ -27,7 +27,7 @@ specify the location of the Puppet master:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :puppet_server do |puppet|
+  config.vm.provision "puppet_server" do |puppet|
     puppet.puppet_server = "puppet.example.com"
   end
 end
@@ -47,7 +47,7 @@ be customized using the Vagrantfile:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :puppet do |puppet|
+  config.vm.provision "puppet_server" do |puppet|
     puppet.puppet_node = "node.example.com"
   end
 end
@@ -62,7 +62,7 @@ flags to use:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :puppet do |puppet|
+  config.vm.provision "puppet_server" do |puppet|
     puppet.options = "--verbose --debug"
   end
 end
