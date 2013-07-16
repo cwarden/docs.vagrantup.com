@@ -4,7 +4,7 @@ sidebar_current: "provisioning-chefclient"
 
 # Chef Client Provisioner
 
-**Provisioner name: `:chef_client`**
+**Provisioner name: `chef_client`**
 
 The chef client provisioner allows you to provision the guest using
 [Chef](http://www.opscode.com/chef/), specifically by connecting
@@ -49,7 +49,7 @@ down by manually specifying a run list:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision "chef_client" do |chef|
     # Add a recipe
     chef.add_recipe "apache"
 
@@ -69,7 +69,7 @@ for the node to come up in using the `environment` configuration option:
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.provision :chef_client do |chef|
+  config.vm.provision "chef_client" do |chef|
     # ...
 
     chef.environment = "development"
