@@ -28,7 +28,7 @@ limitation in some way.
 ## Forwarded Ports Failing in Workstation on Windows
 
 VMware Workstation has a bug on Windows where forwarded ports don't work
-properly. Vagrant actualy works around this bug and makes them work. However,
+properly. Vagrant actually works around this bug and makes them work. However,
 if you run the virtual network editor on Windows, the forwarded ports will
 suddenly stop working.
 
