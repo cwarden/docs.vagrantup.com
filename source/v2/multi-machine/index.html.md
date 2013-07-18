@@ -11,7 +11,7 @@ These machines are generally able to work together or are somehow associated
 with each other. Here are some use-cases people are using multi-machine
 environments for today:
 
-* Accurately modeling a multi-sever production topology, such as separating
+* Accurately modeling a multi-server production topology, such as separating
   a web and database server.
 * Modeling a distributed system and how they interact with each other.
 * Testing an interface, such as an API to a service component.
