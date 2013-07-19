@@ -24,6 +24,20 @@ $ export VAGRANT_VMWARE_FUSION_APP="/Apps/VMware Fusion.app"
 $ vagrant up --provider=vmware_fusion
 ```
 
+## VM Clone Directory
+
+By default, the VMware provider will clone the VMware VM in the box
+to the ".vagrant" folder relative to the folder where the Vagrantfile is.
+Usually, this is fine. For some people, for example those who use a
+differential backup software such as Time Machine, this is very annoying
+because you can't regularly ignore giant virtual machines as part of backups.
+
+The directory where the provider clones the virtual machine can be
+customized by setting the `VAGRANT_VMWARE_CLONE_DIRECTORY` environmental
+variable. This doesn't need to be unique per project. Each project will
+get a different sub-directory within this folder. Therefore, it is safe to
+set this systemwide.
+
 ## Virtual Machine GUI
 
 The VMware provider generally starts the virtual machines
