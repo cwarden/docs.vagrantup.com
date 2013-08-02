@@ -89,10 +89,10 @@ $ tree
 .
 |-- Vagrantfile
 |-- provisioning
-|   |-- ansible_hosts
-|   |-- group_vars
-|           |-- vagrant
-|   |-- playbook.yml
+|   |-- ansible_hosts
+|   |-- group_vars
+|           |-- vagrant
+|   |-- playbook.yml
 ```
 
 In such an arrangement, the `ansible.playbook` and `ansible.inventory_file` options should be
