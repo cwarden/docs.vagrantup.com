@@ -1,5 +1,6 @@
 ---
 sidebar_current: "syncedfolder-basic"
+page_title: "Synced Folders - Basic Usage"
 ---
 
 # Basic Usage
@@ -38,4 +39,14 @@ any definition:
 Vagrant.configure("2") do |config|
   config.vm.synced_folder "src/", "/srv/website", disabled: true
 end
+```
+
+## Modifying the Owner/Group
+
+By default, Vagrant mounts the synced folders with the owner/group set
+to the SSH user. Sometimes it is preferable to mount folders with a different
+owner and group. It is possible to set these options:
+
+```ruby
+config.vm.synced_folder "src/", "/srv/website", owner: "root", group: "root"
 ```
