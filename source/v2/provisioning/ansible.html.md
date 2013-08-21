@@ -20,7 +20,7 @@ a single page of documentation.
 Out of the box, Ansible can control with multiple systems in your infrastructure at the
 same time. It does this by selecting portions of systems listed in Ansible's inventory
 INI formatted file, which defaults to being located at `/etc/ansible/hosts`. This same
-file can be used with Vagrant, or the `ansible.inventory_file` option can be specified to
+file can be used with Vagrant, or the `ansible.inventory_path` option can be specified to
 direct Vagrant to use an inventory file dedicated to your Vagrant project. Using this option
 is recommended to avoid accidentally running playbooks against live infrastructure. A simple
 inventory file for use with Vagrant might look like:
@@ -75,7 +75,7 @@ To run Ansible against your Vagrant guest, the basic Vagrantfile configuration l
 Vagrant.configure("2") do |config|
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "playbook.yml"
-    ansible.inventory_file = "ansible_hosts"
+    ansible.inventory_path = "ansible_hosts"
   end
 end
 ```
@@ -95,14 +95,14 @@ $ tree
 |   |-- playbook.yml
 ```
 
-In such an arrangement, the `ansible.playbook` and `ansible.inventory_file` options should be
+In such an arrangement, the `ansible.playbook` and `ansible.inventory_path` options should be
 adjusted accordingly:
 
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "provisioning/playbook.yml"
-    ansible.inventory_file = "provisioning/ansible_hosts"
+    ansible.inventory_path = "provisioning/ansible_hosts"
   end
 end
 ```
